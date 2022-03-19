@@ -1,7 +1,7 @@
 import json
 import logging
 import os
-from typing import Any, Dict
+from typing import Any, Dict, Final
 
 import requests
 from t_translation import translate
@@ -9,7 +9,7 @@ from t_translation import translate
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-BOT_TOKEN = os.environ["TELEGRAM_UK_CS_TRANSLATION_BOT_TOKEN"]
+ENV_TOKEN_NAME = "TELEGRAM_UK_CS_TRANSLATION_BOT_TOKEN"
 
 
 def respond(err: Any, res: Dict[str, Any] = None):
@@ -24,6 +24,12 @@ def respond(err: Any, res: Dict[str, Any] = None):
 
 
 def lambda_handler(event, _context):
+    # check the token
+    bot_token: Final = os.environ.get(ENV_TOKEN_NAME)
+    if not bot_token:
+        logger.error(f"Bot token is not defined; env={ENV_TOKEN_NAME}")
+        return respond("Bot token is not defined")
+
     # extract message text
     if "body" not in event:
         logger.error(f"Incorrect payload; event={event!r}")
@@ -58,7 +64,7 @@ def lambda_handler(event, _context):
         out_text = ":( " + out_text
 
     r = requests.post(
-        f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+        f"https://api.telegram.org/bot{bot_token}/sendMessage",
         json={
             "chat_id": chat_id,
             "text": out_text,
