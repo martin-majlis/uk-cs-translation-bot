@@ -5,6 +5,10 @@
 Create translation bot that will be translating messages between
 Ukrainian and Czech in popular messaging platforms.
 
+## Results
+
+- Telegram Bot: http://t.me/uk_cs_translation_bot
+
 ## API
 
 For the translation we will use UFAL API - https://lindat.cz/translation/
@@ -30,3 +34,4 @@ It looks that Telegram is popular in Ukraine.
 ## Status:
 
 - 2022-03-19: There is cli interface for translation - `python cli.py`
+- 2022-03-19" There is Telegram Bot - http://t.me/uk_cs_translation_bot

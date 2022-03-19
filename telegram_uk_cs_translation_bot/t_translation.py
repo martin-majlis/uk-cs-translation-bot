@@ -1,3 +1,4 @@
+# COPY - DO NOT MODIFY
 import re
 from dataclasses import dataclass
 from enum import Enum

@@ -134,3 +134,6 @@ dmypy.json
 
 # Idea folder
 .idea/
+
+telegram_uk_cs_translation_bot/package/
+telegram_uk_cs_translation_bot.zip

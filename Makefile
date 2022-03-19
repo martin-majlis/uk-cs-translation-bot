@@ -1,7 +1,14 @@
 OPEN=xdg-open
 
-PROJECT_DIR=.
-TEST_DIR=tests
+ROOT_DIR=$(shell pwd)/
+PROJECT_DIR=$(ROOT_DIR)/
+TEST_DIR=$(ROOT_DIR)/tests
+
+TRANSLATION_FILE=$(ROOT_DIR)/translation.py
+
+TELEGRAM_DIR=$(ROOT_DIR)/telegram_uk_cs_translation_bot
+TELEGRAM_PACKAGE=$(ROOT_DIR)/telegram_uk_cs_translation_bot.zip
+
 
 checks: mypy test
 
@@ -40,4 +47,15 @@ dep-install-dev:
 	pip install -r requirements-dev.txt
 
 external-install:
-	date
+	pip install -r $(TELEGRAM_DIR)/requirements.txt
+
+pack-telegram:
+	cd $(TELEGRAM_DIR); \
+	echo "# COPY - DO NOT MODIFY " > t_translation.py; \
+	cat $(TRANSLATION_FILE) >> t_translation.py; \
+	pip install --target ./package --requirement requirements.txt; \
+	cd package; \
+	find . -name '__pycache__' -exec rm -rfv {} \;; \
+	zip -r $(TELEGRAM_PACKAGE) .; \
+	cd ..; \
+	zip -g $(TELEGRAM_PACKAGE) *.py
