@@ -1,5 +1,9 @@
 import re
+from dataclasses import dataclass
 from enum import Enum
+from typing import List, Optional
+
+import requests
 
 RU_LETTERS = re.compile(r"[ЭЫё]", re.IGNORECASE)
 # https://en.wikipedia.org/wiki/Ukrainian_alphabet
@@ -31,5 +35,41 @@ def detect_language(msg) -> Lang:
             return Lang.UK
 
 
-def translate(msg: str) -> str:
-    return f"TR: {msg}"
+@dataclass
+class Translation:
+    error: Optional[str] = None
+    translation: Optional[List[str]] = None
+
+
+def translate_to(lng: Lang) -> Lang:
+    if lng == Lang.CS:
+        return Lang.UK
+    elif lng == Lang.UK:
+        return Lang.CS
+    raise ValueError(f"Unsupported language {lng}")
+
+
+def translate(msg: str) -> Translation:
+    lang = detect_language(msg)
+    if lang == Lang.RU:
+        return Translation(error="Je to rusky")
+
+    r = requests.post(
+        (
+            "https://lindat.cz/translation/api/v2/languages/?"
+            f"src={lang.value}&"
+            f"tgt={translate_to(lang).value}&"
+            f"frontend=uk-translation-bot"
+        ),
+        data={
+            "input_text": msg,
+        },
+        headers={
+            "Accept": "application/json",
+        },
+    )
+
+    if r.status_code == 200:
+        return Translation(translation=r.json())
+    else:
+        return Translation(error=f"Translation failed: {r.reason}")
