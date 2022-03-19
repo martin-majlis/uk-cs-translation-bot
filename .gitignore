@@ -1,3 +1,4 @@
+data
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +128,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VSCode settings
+.vscode
+
+# Project specific stuff
+lindat_translation_master.*
+lindat_translation_master/
+hunalign-1.1/
+hunalign-1.1.*
