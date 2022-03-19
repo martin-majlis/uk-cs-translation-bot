@@ -56,7 +56,7 @@ def translate(msg: str, client_name: Optional[str] = None) -> Translation:
         lang = Lang.UK
         is_russian = True
 
-    frontend = "uk-translation-bot"
+    frontend = "uk-cs-translation-bot"
     if client_name:
         frontend += f"--{client_name}"
 

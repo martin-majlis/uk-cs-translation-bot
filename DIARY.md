@@ -21,3 +21,13 @@
   - Build package
     - https://docs.aws.amazon.com/lambda/latest/dg/python-package.html#python-package-prereqs
   - Initial version is up and running - http://t.me/uk_cs_translation_bot
+- Create WhatsApp Bot
+- Create Messenger Bot
+  - https://developers.facebook.com/docs/messenger-platform/
+  - After few clicks there is:
+    - https://fb.me/uk.cs.translation.bot
+    - https://m.me/uk.cs.translation.bot
+  - API:
+    - https://developers.facebook.com/docs/messenger-platform/webhook
+    - https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messages
+  - Waiting for approval

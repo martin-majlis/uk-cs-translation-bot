@@ -27,11 +27,33 @@ It looks that Telegram is popular in Ukraine.
 
 ### API
 
-- Viber - https://developers.viber.com/docs/api/python-bot-api/
-- Telegram - https://github.com/python-telegram-bot/python-telegram-bot
-- WhatsApp - https://www.whatsapp.com/business/api
+#### Telegram
+
+- https://github.com/python-telegram-bot/python-telegram-bot
+- easy to use, does not require any approvals
+- ✅ DONE - http://t.me/uk_cs_translation_bot
+
+#### WhatsApp
+
+- https://www.whatsapp.com/business/api
+- requires approval
+- ⏳ I have requested approval
+
+#### Messenger
+
+- https://developers.facebook.com/docs/messenger-platform/
+- https://developers.facebook.com/docs/messenger-platform/webhook
+- https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messages
+- ⏳ I have requested approval - https://fb.me/uk.cs.translation.bot
+- ⏳ I have requested approval - https://m.me/uk.cs.translation.bot
+
+#### Viber
+
+- https://developers.viber.com/docs/api/python-bot-api/
 
 ## Status:
 
 - 2022-03-19: There is cli interface for translation - `python cli.py`
-- 2022-03-19" There is Telegram Bot - http://t.me/uk_cs_translation_bot
+- 2022-03-19: There is Telegram Bot - http://t.me/uk_cs_translation_bot
+- 2022-03-19: I have requested for WhatsApp business API
+- 2022-03-19: I have requested for approval for Messenger Bot - https://m.me/uk.cs.translation.bot
