@@ -23,8 +23,8 @@ test-ci:
 	pytest \
 		--cov=$(PROJECT_DIR) \
 		-v \
-		--ignore lindat_translation_master \
-		--ignore hunalign-1.1
+		--ignore $(TELEGRAM_DIR) \
+		--ignore $(MESSENGER_DIR)
 
 coverage:
 	coverage html -d coverage_html
