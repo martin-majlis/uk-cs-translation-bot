@@ -26,3 +26,7 @@ It looks that Telegram is popular in Ukraine.
 - Viber - https://developers.viber.com/docs/api/python-bot-api/
 - Telegram - https://github.com/python-telegram-bot/python-telegram-bot
 - WhatsApp - https://www.whatsapp.com/business/api
+
+## Status:
+
+- 2022-03-19: There is cli interface for translation - `python cli.py`
