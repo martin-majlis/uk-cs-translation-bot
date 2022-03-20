@@ -9,7 +9,6 @@ Ukrainian and Czech in popular messaging platforms.
 
 - Telegram Bot: http://t.me/uk_cs_translation_bot
 - Messenger Bot: https://m.me/uk.cs.translation.bot
-- Viber Bot: https://www.viber.com/ukcstranslationbot
 
 ## API
 
@@ -52,7 +51,7 @@ It looks that Telegram is popular in Ukraine.
 #### Viber
 
 - API: https://developers.viber.com/docs/api/rest-bot-api/
-- ✅ DONE - https://www.viber.com/ukcstranslationbot
+- ⏳I have requested for becoming public figure - https://www.viber.com/ukcstranslationbot
 
 ## Status:
 
@@ -61,4 +60,4 @@ It looks that Telegram is popular in Ukraine.
 - 2022-03-19: I have requested for WhatsApp business API
 - 2022-03-19: I have requested for approval for Messenger Bot - https://m.me/uk.cs.translation.bot
 - 2022-03-20: Messenger Bot was approved - https://m.me/uk.cs.translation.bot
-- 2022-03-20: There is Viber Bot - https://www.viber.com/ukcstranslationbot
+- 2022-03-20: Viber Bot is waiting for approval - https://www.viber.com/ukcstranslationbot
