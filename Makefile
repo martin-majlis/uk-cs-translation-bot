@@ -12,6 +12,9 @@ TELEGRAM_PACKAGE=$(ROOT_DIR)/telegram_uk_cs_translation_bot.zip
 MESSENGER_DIR=$(ROOT_DIR)/messenger_uk_cs_translation_bot
 MESSENGER_PACKAGE=$(ROOT_DIR)/messenger_uk_cs_translation_bot.zip
 
+VIBER_DIR=$(ROOT_DIR)/viber_uk_cs_translation_bot
+VIBER_PACKAGE=$(ROOT_DIR)/viber_uk_cs_translation_bot.zip
+
 checks: mypy test
 
 mypy:
@@ -24,7 +27,8 @@ test-ci:
 		--cov=$(PROJECT_DIR) \
 		-v \
 		--ignore $(TELEGRAM_DIR) \
-		--ignore $(MESSENGER_DIR)
+		--ignore $(MESSENGER_DIR) \
+		--ignore $(VIBER_DIR)
 
 coverage:
 	coverage html -d coverage_html
@@ -51,7 +55,7 @@ dep-install-dev:
 external-install:
 	pip install -r $(TELEGRAM_DIR)/requirements.txt
 
-pack-all: pack-telegram pack-messenger
+pack-all: pack-telegram pack-messenger pack-viber
 
 pack-telegram:
 	cd $(TELEGRAM_DIR); \
@@ -78,3 +82,16 @@ pack-messenger:
 	cd ..; \
 	zip -g $(MESSENGER_PACKAGE) *.py; \
 	ls -l $(MESSENGER_PACKAGE)
+
+pack-viber:
+	cd $(VIBER_DIR); \
+	rm -rfv $(VIBER_PACKAGE) package; \
+	echo "# COPY - DO NOT MODIFY " > v_translation.py; \
+	cat $(TRANSLATION_FILE) >> v_translation.py; \
+	pip install --target ./package --requirement requirements.txt; \
+	cd package; \
+	find . -name '__pycache__' -exec rm -rfv {} \;; \
+	zip -r $(VIBER_PACKAGE) .; \
+	cd ..; \
+	zip -g $(VIBER_PACKAGE) *.py; \
+	ls -l $(VIBER_PACKAGE)

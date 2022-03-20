@@ -13,7 +13,7 @@
     - ```
       curl -X POST "https://api.telegram.org/bot${TELEGRAM_UK_CS_TRANSLATION_BOT_TOKEN}/setWebhook" \
       -H "Content-Type: application/json" \
-      -d "{'url': '${TELEGRAM_UK_CS_TRANSLATION_BOT_LAMBDA}'}"
+      -d "{"url\": \"${TELEGRAM_UK_CS_TRANSLATION_BOT_LAMBDA}\"}"
       ```
     - ```
       curl -X GET "https://api.telegram.org/bot${TELEGRAM_UK_CS_TRANSLATION_BOT_TOKEN}/getWebhookInfo"
@@ -37,3 +37,14 @@
 
 - Messenger Bot was approved:
   - https://m.me/uk.cs.translation.bot - is now accessible
+- Create Viber Bot
+  - API: https://developers.viber.com/docs/api/rest-bot-api/
+  - Create Webhook
+  - ```
+    curl -X POST "https://chatapi.viber.com/pa/set_webhook" \
+    -H "Content-Type: application/json" \
+    -H "X-Viber-Auth-Token: ${VIBER_UK_CS_TRANSLATION_BOT_TOKEN}" \
+    -d "{\"url\": \"${VIBER_UK_CS_TRANSLATION_BOT_LAMBDA}\", \"event_types\":[]}"
+    ```
+  - https://developers.viber.com/docs/api/rest-bot-api/#receive-message-from-user
+  - https://developers.viber.com/docs/api/rest-bot-api/#send-message
