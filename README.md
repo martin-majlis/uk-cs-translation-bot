@@ -7,8 +7,10 @@ Ukrainian and Czech in popular messaging platforms.
 
 ## Results
 
-- Telegram Bot: http://t.me/uk_cs_translation_bot
-- Messenger Bot: https://m.me/uk.cs.translation.bot
+- ✅ Telegram Bot: http://t.me/uk_cs_translation_bot
+- ✅ Messenger Bot: https://m.me/uk.cs.translation.bot
+- ⏳ WhatsApp Bot: waiting for accepting into beta program
+- ⏳ Viber Bot: waiting for approval - https://www.viber.com/ukcstranslationbot
 
 ## API
 
